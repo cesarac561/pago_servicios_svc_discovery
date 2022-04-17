@@ -13,7 +13,7 @@ COPY build.gradle gradlew gradlew.bat $APP_HOME
 COPY gradle $APP_HOME/gradle
 COPY . .
 RUN ls -lha
-RUN ./gradlew --stacktrace clean test build
+RUN ./gradlew --no-watch-fs --stacktrace clean test build
 
 # Ejecutar la aplicación
 FROM openjdk:11-jre
